@@ -3,9 +3,9 @@ FROM ghcr.io/linuxserver/baseimage-ubuntu:focal
 # set version label
 ARG BUILD_DATE
 ARG VERSION="0.0.1"
-ARG RADARR_RELEASE
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="thelamer"
+ARG RADARR_RELEASE="0.0.1"
+LABEL build_version="megatron1092 version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="megatron1092"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
