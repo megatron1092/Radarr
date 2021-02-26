@@ -47,5 +47,5 @@ User uid:    $(id -u abc)
 User gid:    $(id -g abc)
 -------------------------------------
 "
-chown abc:abc /app
-chown abc:abc /config
+chown -R abc:abc /app
+chown -R abc:abc /config
