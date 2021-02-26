@@ -22,7 +22,7 @@ RUN \
 	sqlite3 && \
  echo "**** install radarr ****" && \
  radarr_url=$(curl -s https://api.github.com/repos/megatron1092/Radarr/releases \
-|jq -r '.assets[].browser_download_url' |grep linux) && \
+|jq -r '.assets[].browser_download_url') && \
  mkdir -p /app/radarr/bin && \
  curl -o \
 	/tmp/radarr.tar.gz -L \
