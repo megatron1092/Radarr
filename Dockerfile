@@ -43,4 +43,4 @@ RUN \
 
 # ports and volumes
 EXPOSE 7878
-VOLUME /config
+#VOLUME /config
