@@ -21,7 +21,7 @@ RUN \
 	libmediainfo0v5 \
 	sqlite3 && \
  echo "**** install radarr ****" && \
- radarr_url=$(curl -s https://api.github.com/repos/megatron1092/Radarr/releases \
+ radarr_url=$(curl -s https://api.github.com/repos/megatron1092/Radarr/releases/tags/0.0.1 \
 |jq -r '.assets[].browser_download_url') && \
  mkdir -p /app/radarr/bin && \
  curl -o \
