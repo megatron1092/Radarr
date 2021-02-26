@@ -21,14 +21,12 @@ RUN \
 	libmediainfo0v5 \
 	sqlite3 && \
  echo "**** install radarr ****" && \
+ radarr_url=$(curl -s https://api.github.com/repos/megatron1092/Radarr/releases/tag/0.0.1
+|jq -r '.assets[].browser_download_url' |grep linux) &&
  mkdir -p /app/radarr/bin && \
- if [ -z ${RADARR_RELEASE+x} ]; then \
-	RADARR_RELEASE=$(curl -sL "https://api.github.com/repos/megatron1092/Radarr/releases/tag/0.0.1" \
-	| jq -r '.[0].version'); \
- fi && \
  curl -o \
 	/tmp/radarr.tar.gz -L \
-	"https://api.github.com/repos/megatron1092/Radarr/releases/tag/0.0.1" && \
+	"${radarr_url}" && \
  tar ixzf \
 	/tmp/radarr.tar.gz -C \
 	/app/radarr/bin --strip-components=1 && \
