@@ -39,7 +39,7 @@ RUN \
 	/var/tmp/*
 
 # copy local files
-COPY /root /
+#COPY /root /
 
 # ports and volumes
 EXPOSE 7878
