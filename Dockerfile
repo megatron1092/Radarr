@@ -21,8 +21,8 @@ RUN \
 	libmediainfo0v5 \
 	sqlite3 && \
  echo "**** install radarr ****" && \
- radarr_url=$(curl -s https://api.github.com/repos/megatron1092/Radarr/releases/tag/0.0.1
-|jq -r '.assets[].browser_download_url' |grep linux) &&
+ radarr_url=$(curl -s https://api.github.com/repos/megatron1092/Radarr/releases/tag/0.0.1 \
+|jq -r '.assets[].browser_download_url' |grep linux) && \
  mkdir -p /app/radarr/bin && \
  curl -o \
 	/tmp/radarr.tar.gz -L \
@@ -30,7 +30,7 @@ RUN \
  tar ixzf \
 	/tmp/radarr.tar.gz -C \
 	/app/radarr/bin --strip-components=1 && \
- echo "UpdateMethod=docker\nBranch=${RADARR_BRANCH}\nPackageVersion=${VERSION}\nPackageAuthor=megatron2093" > /app/radarr/package_info && \
+ echo "UpdateMethod=docker\nBranch=${RADARR_BRANCH}\nPackageVersion=${VERSION}\nPackageAuthor=megatron1092" > /app/radarr/package_info && \
  echo "**** cleanup ****" && \
  rm -rf \
 	/app/radarr/bin/Radarr.Update \
